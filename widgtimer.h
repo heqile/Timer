@@ -1,31 +1,30 @@
-#ifndef WIDGCOUNTER_H
-#define WIDGCOUNTER_H
+#ifndef WIDGTIMER_H
+#define WIDGTIMER_H
 
 #include <QObject>
 #include "timer.h"
-#include <QThread>
 #include <QTime>
 
-class widgcounter : public QObject
+class widgtimer : public QObject
 {
     Q_OBJECT
 public:
-    explicit widgcounter(QObject *parent = 0);
+    explicit widgtimer(QObject *parent = 0);
+    void getTime(QTime);
 private:
-//    QThread *mthread;
     timer *mtimer;
     QTime mtime;
     int hh;
     int mm;
     int ss;
-    void timeAccumu();
+    void timeDecs();
 signals:
     void signalTimeChange(QTime );
+    void signalTimeOut();
 public slots:
     void onCounterStart();
     void onCounterStop();
     void onCountDownSec();
-    void onCountPause();
 };
 
-#endif // WIDGCOUNTER_H
+#endif // WIDGTIMER_H

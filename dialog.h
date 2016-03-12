@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include "widgcounter.h"
+#include "widgtimer.h"
+#include <QMessageBox>
 
 namespace Ui {
 class Dialog;
@@ -19,11 +21,13 @@ public:
 private:
     Ui::Dialog *ui;
     widgcounter *mCounter;
-
-    int num;
+    widgtimer *mTimer;
 
 private slots:
-    void onCountDownSec(QTime mtime);
+    void onCountDownSec(QTime);
+    void onTimerDownSec(QTime);
+    void onTimerStart();
+    void onTimerTimeOut();
 };
 
 #endif // DIALOG_H

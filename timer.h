@@ -9,6 +9,7 @@ class timer : public QTimer
     Q_OBJECT
 public:
     explicit timer(QObject *parent = 0);
+
 private:
 
 signals:

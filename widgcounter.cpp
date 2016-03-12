@@ -18,7 +18,7 @@ void widgcounter::onCounterStop()
     mtimer->stop();
     ss = mm = hh = 0;
     mtime = QTime::fromString("00:00:00","hh:mm:ss");
-    emit signalPlusSec(mtime);
+    emit signalTimeChange(mtime);
 }
 
 void widgcounter::timeAccumu()
@@ -40,7 +40,7 @@ void widgcounter::onCountDownSec()
 {
     timeAccumu();
     mtime = QTime::fromString(QString::number(hh)+":"+QString::number(mm)+":"+QString::number(ss),"h:m:s");
-    emit signalPlusSec(mtime);
+    emit signalTimeChange(mtime);
 }
 
 void widgcounter::onCountPause()
