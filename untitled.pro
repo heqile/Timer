@@ -13,8 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        dialog.cpp
+        dialog.cpp \
+    timer.cpp \
+    widgcounter.cpp
 
-HEADERS  += dialog.h
+HEADERS  += dialog.h \
+    timer.h \
+    widgcounter.h
 
 FORMS    += dialog.ui

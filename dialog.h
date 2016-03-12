@@ -2,6 +2,7 @@
 #define DIALOG_H
 
 #include <QDialog>
+#include "widgcounter.h"
 
 namespace Ui {
 class Dialog;
@@ -17,6 +18,12 @@ public:
 
 private:
     Ui::Dialog *ui;
+    widgcounter *mCounter;
+
+    int num;
+
+private slots:
+    void onCountDownSec(QTime mtime);
 };
 
 #endif // DIALOG_H
